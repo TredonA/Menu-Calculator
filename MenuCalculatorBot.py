@@ -2,6 +2,8 @@
 # Simple menu print out and total calculator for the workers that require
 # a quick working program to aid them in their customer interactions.
 
+from math import floor
+
 def totalCalculator(employeeInput):
     numChickenStrips = 0;
     numFrenchFries = 0;
@@ -83,9 +85,12 @@ def totalCalculator(employeeInput):
             print(str(numSmallDrinks) + " Small Drink")
         else:
             print(str(numSmallDrinks) + " Small Drinks")
-
-    print("This will come out to a total of $" + 
-          str(totalPrice))
+    if totalPrice % (floor(totalPrice)) == .0 or \
+    totalPrice % (floor(totalPrice)) == .5:
+        print("This will come out to a total of $" + str(totalPrice) + "0")
+    else:
+        print("This will come out to a total of $" + 
+              str(totalPrice))
     userCmd = input("Thank you for using the program. Would you" + 
           " like to go again? Please type in Y or to use again or N to exit: ")
     if(userCmd == 'N' or userCmd == 'n'):
