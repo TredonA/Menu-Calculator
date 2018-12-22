@@ -52,7 +52,7 @@ def totalCalculator(employeeInput):
         if(numHamburgers == 1):
             print(str(numHamburgers) + " Hamburger")
         else:
-            print(str(numHaburgers) + " Hamburgers")
+            print(str(numHamburgers) + " Hamburgers")
     if(numHotdogs > 0):
         if(numHotdogs == 1):
             print(str(numHotdogs) + " Hotdog")
@@ -84,14 +84,15 @@ def totalCalculator(employeeInput):
         else:
             print(str(numSmallDrinks) + " Small Drinks")
 
-    print("This will come out to a total of $" + str(totalPrice))
+    print("This will come out to a total of $" + 
+          str(totalPrice))
     userCmd = input("Thank you for using the program. Would you" + 
           " like to go again? Please type in Y or to use again or N to exit: ")
-    if(userCmd == 'Y' or userCmd == 'y'):
+    if(userCmd == 'N' or userCmd == 'n'):
+        print("Thank you for using the Diner Aid. Have a good day!")
+    elif(userCmd == 'Y' or userCmd == 'y'):
         newInput = input("Please enter a new order: ")
         inputChecker(newInput)
-    elif(userCmd == 'N' or userCmd == 'n'):
-        print("Thank you for using the Diner Aid. Have a good day!")
     else:
         print("Unrecognized input. Exiting program now...")
 
@@ -101,8 +102,9 @@ def inputChecker(employeeInput):
     except:
         newInput = input("Input was invalid! Please try again and make sure " +
                          "that you're only entering integer values: ")
-        inputChecker(employeeInput)
-    totalCalculator(employeeInput)
+        inputChecker(newInput)
+    else: 
+        totalCalculator(employeeInput)
 
 
 itemsPurchased = input("\'Trey's Diner Aid\' for employees. Here are the" +
